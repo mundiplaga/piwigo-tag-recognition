@@ -75,7 +75,7 @@ class StableDiff extends API {
         } else {
             if (isset($json_response->caption)) {
                 $caption = $json_response->caption;
-                error_log($caption);
+                error_log("Caption is: $caption");
             // $tags = [];
                 $tags = explode(',', $caption);
             // foreach ($json_response->caption as $tagObject) {
@@ -85,7 +85,7 @@ class StableDiff extends API {
             } else {
                 error_log("The 'caption' property is missing in the JSON response.");
             }
-            error_log($tags);
+            error_log("Tags are: $tags");
             error_log('here2');
             return $tags;
         }
