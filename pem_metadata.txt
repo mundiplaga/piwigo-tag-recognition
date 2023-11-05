@@ -1,0 +1,4 @@
+File automatically created from SVN or Git repository.
+
+URL: https://github.com/Piwigo/piwigo-tag-recognition 
+Revision: d8e0027f646afa3ac116277849458dce320eddd5 (Sat Jan 29 17:13:58 2022 +0100)
