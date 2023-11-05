@@ -74,7 +74,7 @@ class StableDiff extends API {
         foreach ($json_response->result->tags as $tagObject) 
         {
             $tagObjectArray = json_decode(json_encode($tagObject), true);
-            array_push($tags, $tagObjectArray["caption"]);
+            array_push($tags, $tagObjectArray["caption"][$params['language']]);
         }
         
         return $tags;
