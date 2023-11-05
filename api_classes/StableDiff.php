@@ -71,7 +71,7 @@ class StableDiff extends API {
             // JSON decoding failed, handle the error
             $jsonError = json_last_error();
             $jsonErrorMsg = json_last_error_msg();
-            echo "JSON decoding error (code: $jsonError): $jsonErrorMsg";
+            error_log("JSON decoding error (code: $jsonError): $jsonErrorMsg");
         } else {
         // if (!property_exists($json_response, "caption"))
         //     throw new Exception('Api Error');
