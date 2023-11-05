@@ -67,8 +67,8 @@ class StableDiff extends API {
         
         $json_response = json_decode($response);
 
-        if (!property_exists($json_response, "caption"))
-            throw new Exception('Api Error');
+        // if (!property_exists($json_response, "caption"))
+        //     throw new Exception('Api Error');
 
         $tags = [];
         error_log($json_response);
