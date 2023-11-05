@@ -85,7 +85,6 @@ class StableDiff extends API {
             } else {
                 error_log("The 'caption' property is missing in the JSON response.");
             }
-            error_log("Tags are: $tags");
             error_log('here2');
             return $tags;
         }
