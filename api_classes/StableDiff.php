@@ -66,7 +66,8 @@ class StableDiff extends API {
         curl_close($ch);
         
         $json_response = json_decode($response);
-
+        error_log('here1');
+        error_log($json_response);
         // if (!property_exists($json_response, "caption"))
         //     throw new Exception('Api Error');
 
@@ -78,7 +79,7 @@ class StableDiff extends API {
             array_push($tags, $tagObjectArray["tag"][$params['language']]);
         }
         error_log($tags);
-        error_log('here');
+        error_log('here2');
         return $tags;
     }
 }
