@@ -74,7 +74,7 @@ class StableDiff extends API {
             if (isset($json_response->caption)) {
                 $caption = $json_response->caption;
                 $tags = explode(',', $caption);
-                $limit_tags = array_slice($tags, 0, $params['limit'])
+                $limit_tags = array_slice($tags, 0, $params['limit']);
             } else {
                 error_log("The 'caption' property is missing in the JSON response.");
             }
