@@ -73,6 +73,7 @@ jQuery('form').on('submit', function(e) {
         $('#applyAction').removeAttr('disabled');
       })
       .catch((e) => {
+        console.error('An error occurred:', e);
         $('.tr-icon-robot').removeClass('loading');
         $('.tr-icon-robot').addClass('dead');
         $('.tr-batch-manager-info p').html(str_tr_error);
