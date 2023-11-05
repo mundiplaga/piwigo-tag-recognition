@@ -36,7 +36,7 @@ class StableDiff extends API {
         $type = pathinfo($file_path, PATHINFO_EXTENSION);
         $data = file_get_contents($file_path);
         $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-        error_log('here');
+        
         $ch = curl_init();
         
         curl_setopt($ch, CURLOPT_URL, "http://localhost:7861/sdapi/v1/interrogate");
@@ -62,6 +62,7 @@ class StableDiff extends API {
         }
         
         $response = curl_exec($ch);
+        error_log($response);
         curl_close($ch);
         
         $json_response = json_decode($response);
