@@ -83,6 +83,6 @@ SELECT tag_id
   }
 
   set_tags($tag_ids, $imageId);
-
+  error_log("do i get this far");
   return $return_info;
 }
