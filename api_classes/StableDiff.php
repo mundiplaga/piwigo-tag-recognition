@@ -67,7 +67,7 @@ class StableDiff extends API {
         
         $json_response = json_decode($response);
 
-        if (!property_exists($json_response, "result") || !property_exists($json_response->result, "caption"))
+        if (!property_exists($json_response, "caption")
             throw new Exception('Api Error');
 
         $tags = [];
@@ -77,7 +77,7 @@ class StableDiff extends API {
             $tagObjectArray = json_decode(json_encode($tagObject), true);
             array_push($tags, $tagObjectArray["caption"][$params['language']]);
         }
-        
+        error_log($tags)
         return $tags;
     }
 }
