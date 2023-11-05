@@ -73,7 +73,7 @@ class StableDiff extends API {
             $jsonErrorMsg = json_last_error_msg();
             error_log("JSON decoding error (code: $jsonError): $jsonErrorMsg");
         } else {
-        // if (!property_exists($json_response, "caption"))
+            if (property_exists($json_response, "caption")) {
         //     throw new Exception('Api Error');
 
             $tags = [];
@@ -81,6 +81,9 @@ class StableDiff extends API {
             {
                 $tagObjectArray = json_decode(json_encode($tagObject), true);
                 array_push($tags, $tagObjectArray["tag"][$params['language']]);
+            }
+            } else {
+                error_log("The 'caption' property is missing in the JSON response.");
             }
             error_log($tags);
             error_log('here2');
