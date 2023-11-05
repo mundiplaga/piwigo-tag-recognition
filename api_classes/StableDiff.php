@@ -78,6 +78,7 @@ class StableDiff extends API {
             array_push($tags, $tagObjectArray["tag"][$params['language']]);
         }
         error_log($tags);
+        error_log('here');
         return $tags;
     }
 }
