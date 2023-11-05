@@ -28,7 +28,9 @@ function ws_tagRecognition_getTags($params, &$service)
   $tags = tr_getAPI($apiName)->generateTags($conf, $params);
   try {
   } catch (\Throwable $th) {
-    return new PwgError(403, 'API Error');
+    // return new PwgError(403, 'API Error');
+    error_log("An error occurred: " . $th->getMessage());
+    throw $th;
   }
 
   return $tags;
@@ -76,7 +78,9 @@ function ws_tagRecognition_generateAndAssignTags($params, &$service)
   try {
     $tags = tr_getAPI($apiName)->generateTags($conf, $params);
   } catch (\Throwable $th) {
-    return new PwgError(403, 'API Error');
+    // return new PwgError(403, 'API Error');
+    error_log("An error occurred: " . $th->getMessage());
+    throw $th;
   }
 
   return tr_createAndAssignTags($tags, $params['imageId']);
