@@ -71,7 +71,7 @@ class StableDiff extends API {
             throw new Exception('Api Error');
 
         $tags = [];
-        error_log($json_response)
+        error_log($json_response);
         foreach ($json_response->caption as $tagObject) 
         {
             $tagObjectArray = json_decode(json_encode($tagObject), true);
