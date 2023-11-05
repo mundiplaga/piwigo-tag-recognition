@@ -39,7 +39,7 @@ class StableDiff extends API {
 
         $ch = curl_init();
         
-        curl_setopt($ch, CURLOPT_URL, "http://localhost:7860/sdapi/v1/interrogate");
+        curl_setopt($ch, CURLOPT_URL, "http://localhost:7861/sdapi/v1/interrogate");
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
