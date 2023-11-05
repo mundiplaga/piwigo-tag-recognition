@@ -84,6 +84,6 @@ function ws_tagRecognition_generateAndAssignTags($params, &$service)
     error_log("An error occurred: " . $th->getMessage());
     throw $th;
   }
-  error_log("Param iamge id is: $params['imageId']");
+  error_log($params['imageId']);
   return tr_createAndAssignTags($tags, $params['imageId']);
 }
