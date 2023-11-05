@@ -67,19 +67,24 @@ class StableDiff extends API {
         
         $json_response = json_decode($response);
         error_log('here1');
-        error_log($json_response);
+        if ($json_response === null) {
+            // JSON decoding failed, handle the error
+            $jsonError = json_last_error();
+            $jsonErrorMsg = json_last_error_msg();
+            echo "JSON decoding error (code: $jsonError): $jsonErrorMsg";
+        } else {
         // if (!property_exists($json_response, "caption"))
         //     throw new Exception('Api Error');
 
-        $tags = [];
-        error_log($json_response);
-        foreach ($json_response->caption as $tagObject) 
-        {
-            $tagObjectArray = json_decode(json_encode($tagObject), true);
-            array_push($tags, $tagObjectArray["tag"][$params['language']]);
+            $tags = [];
+            foreach ($json_response->caption as $tagObject) 
+            {
+                $tagObjectArray = json_decode(json_encode($tagObject), true);
+                array_push($tags, $tagObjectArray["tag"][$params['language']]);
+            }
+            error_log($tags);
+            error_log('here2');
+            return $tags;
         }
-        error_log($tags);
-        error_log('here2');
-        return $tags;
     }
 }
