@@ -4,7 +4,7 @@
 
 {footer_script}
     const str_tr_loading = "{'Loading... %d1/%d2 processed photos'|@translate}";
-    const str_tr_error = "{'There is an error with the API'|@translate}";
+    const str_tr_error = "{'There is an error1 with the API'|@translate}";
     const str_tr_sucess = "{'Tag successfully generated and added'|@translate}";
 {/footer_script}
 

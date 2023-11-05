@@ -7,7 +7,7 @@
 {footer_script}
     const pwg_token = "{$PWG_TOKEN}";
     const ACTUAL_API = '{$ACTUAL_API}'
-    const str_there_is_an_error = '{'There is an error with the API'|@translate}';
+    const str_there_is_an_error = '{'There is an error2 with the API'|@translate}';
     const str_loading = '{'Loading...'|@translate}';
     const language = null;
 {/footer_script}
