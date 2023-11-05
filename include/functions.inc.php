@@ -30,8 +30,6 @@ function tr_createAndAssignTags($tags, $imageId) {
 
   $tag_ids = array();
   $return_info = array();
-  error_log("in functions");
-  error_log(print_r($tag_names, true));
   foreach ($tag_names as $tag_name) 
   {
     $escaped_tag_name =  pwg_db_real_escape_string($tag_name);
@@ -83,6 +81,5 @@ SELECT tag_id
   }
 
   set_tags($tag_ids, $imageId);
-  error_log("do i get this far");
   return $return_info;
 }

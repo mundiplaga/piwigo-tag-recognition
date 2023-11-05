@@ -62,11 +62,9 @@ class StableDiff extends API {
         }
         
         $response = curl_exec($ch);
-        error_log($response);
         curl_close($ch);
         
         $json_response = json_decode($response);
-        error_log('here1');
         if ($json_response === null) {
             // JSON decoding failed, handle the error
             $jsonError = json_last_error();
@@ -75,7 +73,6 @@ class StableDiff extends API {
         } else {
             if (isset($json_response->caption)) {
                 $caption = $json_response->caption;
-                error_log("Caption is: $caption");
             // $tags = [];
                 $tags = explode(',', $caption);
             // foreach ($json_response->caption as $tagObject) {
@@ -85,7 +82,6 @@ class StableDiff extends API {
             } else {
                 error_log("The 'caption' property is missing in the JSON response.");
             }
-            error_log('here2');
             return $tags;
         }
     }

@@ -77,13 +77,10 @@ function ws_tagRecognition_generateAndAssignTags($params, &$service)
 
   try {
     $tags = tr_getAPI($apiName)->generateTags($conf, $params);
-    error_log("in ws_functions");
-    error_log(print_r($tags, true));
   } catch (\Throwable $th) {
     // return new PwgError(403, 'API Error');
     error_log("An error occurred: " . $th->getMessage());
     throw $th;
   }
-  error_log($params['imageId']);
   return tr_createAndAssignTags($tags, $params['imageId']);
 }
