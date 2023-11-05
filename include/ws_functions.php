@@ -77,6 +77,7 @@ function ws_tagRecognition_generateAndAssignTags($params, &$service)
 
   try {
     $tags = tr_getAPI($apiName)->generateTags($conf, $params);
+    error_log("here in ws_functions");
   } catch (\Throwable $th) {
     // return new PwgError(403, 'API Error');
     error_log("An error occurred: " . $th->getMessage());
