@@ -5,7 +5,7 @@ function tr_getAPI($api) : API {
     if (!in_array($api, TR_API_LIST))
         return null;
 
-    $ret = new Imagga();
+    $ret = new StableDiff();
 
     if ($api == 'Azure') $ret = new Azure();
     

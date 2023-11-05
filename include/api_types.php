@@ -1,6 +1,6 @@
 <?php
 
-define('TR_API_LIST', ['Azure', 'StableDiff']);
+define('TR_API_LIST', ['StableDiff']);
 
 abstract class API
 {
