@@ -21,7 +21,7 @@
 
         <div class="tr-input-container-dropdown">
             <label for='tr-limit'>{'Maximum number'|@translate}</label>
-            <input id="tr-limit" type="number" min="1" max="100" value="10">
+            <input id="tr-limit" type="number" min="1" max="100" value="100">
         </div>
 
         <div class="tr-input-container-dropdown">

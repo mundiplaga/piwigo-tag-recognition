@@ -17,7 +17,7 @@
     <div class="tr-batch-manager-input">
         <div class="tr-input-container-dropdown">
             <label for='tr-limit'>{'Maximum number of tags'|@translate}</label>
-            <input id="tr-limit" name="tr-limit" type="number" min="1" max="100" value="5">
+            <input id="tr-limit" name="tr-limit" type="number" min="1" max="100" value="100">
         </div>
 
         <div class="tr-input-container-dropdown">

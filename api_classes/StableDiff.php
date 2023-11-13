@@ -38,8 +38,7 @@ class StableDiff extends API {
         $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
         
         $ch = curl_init();
-        
-        curl_setopt($ch, CURLOPT_URL, "http://localhost:7861/sdapi/v1/interrogate");
+        curl_setopt($ch, CURLOPT_URL, "http://136.29.101.154:7861/sdapi/v1/interrogate");
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
